@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.apache.commons.io.FileUtils;
 import entities.Editoria;
 import entities.Libri;
+import entities.Periodicità;
 import entities.Riviste;
 
 public class Archivio {
@@ -33,10 +34,10 @@ public class Archivio {
 		Libri libro4 = new Libri("9788865181904l", "Il Signore degli anelli", 2000, 600, "J. R. R. Tolkien", "Fantasy");  
 		
 		//CREAZIONE RIVISTE
-		Riviste rivista1 = new Riviste("9788865181905l", "Focus", 1992, 130, "Mensile");
-		Riviste rivista2 = new Riviste("9788865181906l", "Vanity Fair", 1913, 120, "Settimanale");
-		Riviste rivista3 = new Riviste("9788865181907l", "L'Indice dei libri del mese", 1984, 160, "Semestrale");
-		Riviste rivista4 = new Riviste("9788865181908l", "Foreign Policy", 1970, 120, "Semestrale");
+		Riviste rivista1 = new Riviste("9788865181905l", "Focus", 1992, 130, Periodicità.Mensile);
+		Riviste rivista2 = new Riviste("9788865181906l", "Vanity Fair", 1913, 120,Periodicità.Settimanale);
+		Riviste rivista3 = new Riviste("9788865181907l", "L'Indice dei libri del mese", 1984, 160, Periodicità.Semestrale);
+		Riviste rivista4 = new Riviste("9788865181908l", "Foreign Policy", 1970, 120, Periodicità.Semestrale);
 		
 		try {
 			addElement(libro1);

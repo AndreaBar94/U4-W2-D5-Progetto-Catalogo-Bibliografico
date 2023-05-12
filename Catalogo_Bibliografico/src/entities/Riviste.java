@@ -3,20 +3,20 @@ package entities;
 
 public class Riviste extends Editoria{
 	
-	private String periodicità;
+	private Periodicità periodicità;
 	
 	
-	public Riviste(String ISBN, String titolo, long annoPub, long pagine, String periodicità) {
+	public Riviste(String ISBN, String titolo, long annoPub, long pagine, Periodicità periodicità) {
 		
 		super(ISBN, titolo, annoPub, pagine);
 		this.periodicità = periodicità;
 	}
 
-	public String getPeriodicità() {
+	public Periodicità getPeriodicità() {
 		return periodicità;
 	}
 	
-	public void setPeriodicità(String periodicità) {
+	public void setPeriodicità(Periodicità periodicità) {
 		this.periodicità = periodicità;
 	}
 	
@@ -37,8 +37,9 @@ public class Riviste extends Editoria{
 
 	public static Riviste fromStringFile(String stringFile) {
 		String[] split = stringFile.split("@");
+		Periodicità periodicità = Periodicità.valueOf(split[5]);
 		
-		return new Riviste(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), split[5]);
+		return new Riviste(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), periodicità);
 	}
 	
 }
