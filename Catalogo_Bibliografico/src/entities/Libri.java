@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Arrays;
+import java.util.List;
 
 public class Libri extends Editoria{
 	
@@ -37,6 +39,7 @@ public class Libri extends Editoria{
 	
 	public static String toStringFile(Libri libro) {
 		return Libri.class.getSimpleName()
+				+ "@" + libro.ISBN
 				+ "@" + libro.titolo
 				+ "@" + libro.annoPub
 				+ "@" + libro.pagine
@@ -49,5 +52,8 @@ public class Libri extends Editoria{
 		
 		return new Libri(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), split[5], split[6]);
 	}
+	
+	
+
 
 }
