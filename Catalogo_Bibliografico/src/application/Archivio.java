@@ -27,8 +27,8 @@ public class Archivio {
 	public static void main(String[] args) {
 		
 		//CREAZIONE LIBRI
-		Libri libro1 = new Libri("9788865181901l", "Harry Potter 1", 1997, 304, "J.K.Rowling", "Fantasy");  
-		Libri libro2 = new Libri("9788865181902l", "Harry Potter 2", 1998, 224, "J.K.Rowling", "Fantasy");  
+		Libri libro1 = new Libri("9788865181901l", "Harry Potter 1", 1997, 304, "J. K. Rowling", "Fantasy");  
+		Libri libro2 = new Libri("9788865181902l", "Harry Potter 2", 1998, 224, "J. K. Rowling", "Fantasy");  
 		Libri libro3 = new Libri("9788865181903l", "Il Signore degli anelli", 1955, 500, "J. R. R. Tolkien", "Fantasy");  
 		Libri libro4 = new Libri("9788865181904l", "Il Signore degli anelli", 2000, 600, "J. R. R. Tolkien", "Fantasy");  
 		
@@ -56,10 +56,10 @@ public class Archivio {
 				logger.error("Errore!" + e);
 			}
 		
-		printArchivio();
+		//printArchivio();
 		searchByISBN("9788865181901l");
 		searchByYear(1913);
-		searchByAut("J.K.Rowling");
+		searchByAut("J. K. Rowling");
 		
 	}
 	
