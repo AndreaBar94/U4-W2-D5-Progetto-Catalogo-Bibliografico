@@ -131,9 +131,9 @@ public class Archivio {
 	            str += "#";
 	        }
 	        if (elemento instanceof Libri) {
-	            str += Libri.toStringFile((Libri) elemento);
+	            str += Libri.toStrFile((Libri) elemento);
 	        } else if (elemento instanceof Riviste) {
-	            str += Riviste.toStringFile((Riviste) elemento);
+	            str += Riviste.toStrFile((Riviste) elemento);
 	        }
 	    }
 	    FileUtils.writeStringToFile(file, str, "UTF-8");
@@ -149,14 +149,15 @@ public class Archivio {
 	    for (String newStr : splitStr) {
 	        Editoria element = null;
 	        if (newStr.startsWith(Libri.class.getSimpleName())) {
-	            element = Libri.fromStringFile(newStr);
+	            element = Libri.fromStrFile(newStr);
 	        } else if (newStr.startsWith(Riviste.class.getSimpleName())) {
-	            element = Riviste.fromStringFile(newStr);
+	            element = Riviste.fromStrFile(newStr);
 	        }
 	        if (element != null) {
 	            archivio.put(element.getISBN(), element);
 	        }
 	    }
+	    printArchivio();
 	    logger.info("Archivio caricato correttamente dal file " + file);
 	}
 

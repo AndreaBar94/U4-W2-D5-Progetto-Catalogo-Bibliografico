@@ -35,7 +35,7 @@ public class Libri extends Editoria{
 	    return super.toString() + ", Autore: " + autore + ", Genere: " + genere;
 	}
 	
-	public static String toStringFile(Libri libro) {
+	public static String toStrFile(Libri libro) {
 		return Libri.class.getSimpleName()
 				+ "@" + libro.ISBN
 				+ "@" + libro.titolo
@@ -45,7 +45,7 @@ public class Libri extends Editoria{
 				+ "@" + libro.genere;
 	}
 
-	public static Libri fromStringFile(String stringFile) {
+	public static Libri fromStrFile(String stringFile) {
 		String[] split = stringFile.split("@");
 		
 		return new Libri(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), split[5], split[6]);

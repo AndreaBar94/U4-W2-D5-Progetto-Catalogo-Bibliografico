@@ -26,7 +26,7 @@ public class Riviste extends Editoria{
 	    return super.toString() + ", Periodicità " + periodicità ;
 	}
 	
-	public static String toStringFile(Riviste rivista) {
+	public static String toStrFile(Riviste rivista) {
 		return Riviste.class.getSimpleName()  // Serve per identificare il tipo di elemento
 				+ "@" + rivista.ISBN
 				+ "@" + rivista.titolo
@@ -35,7 +35,7 @@ public class Riviste extends Editoria{
 				+ "@" + rivista.periodicità;
 	}
 
-	public static Riviste fromStringFile(String stringFile) {
+	public static Riviste fromStrFile(String stringFile) {
 		String[] split = stringFile.split("@");
 		Periodicità periodicità = Periodicità.valueOf(split[5]);
 		
